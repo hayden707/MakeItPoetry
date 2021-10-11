@@ -14,20 +14,27 @@ module.exports = (sequelize, DataTypes) => {
         as: 'user'
       }),
         SourceText.hasMany(model.NewPoem, {
-          foreignKey: 'source_text_id',
-          as: 'source_text'
+          foreignKey: 'source_id',
+          as: 'source'
         })
     }
   }
   SourceText.init(
     {
-      userId: DataTypes.INTEGER,
-      content: DataTypes.STRING
+      content: DataTypes.STRING,
+      user_id: {
+        type: DataTypes.INTEGER,
+        onDelete: 'CASCADE',
+        references: {
+          model: 'users',
+          key: 'id'
+        }
+      }
     },
     {
       sequelize,
       modelName: 'SourceText',
-      tableName: 'source_text'
+      tableName: 'sources'
     }
   )
   return SourceText

@@ -14,21 +14,35 @@ module.exports = (sequelize, DataTypes) => {
         as: 'user'
       }),
         NewPoem.belongsTo(model.SourceText, {
-          foreignKey: 'source_text_id',
-          as: 'source_text'
+          foreignKey: 'source_id',
+          as: 'source'
         })
     }
   }
   NewPoem.init(
     {
-      sourceId: DataTypes.INTEGER,
-      userId: DataTypes.INTEGER,
-      content: DataTypes.STRING
+      content: DataTypes.STRING,
+      user_id: {
+        type: DataTypes.INTEGER,
+        onDelete: 'CASCADE',
+        references: {
+          model: 'users',
+          key: 'id'
+        }
+      },
+      source_id: {
+        type: DataTypes.INTEGER,
+        onDelete: 'CASCADE',
+        references: {
+          model: 'sources',
+          key: 'id'
+        }
+      }
     },
     {
       sequelize,
       modelName: 'NewPoem',
-      tableName: 'new_poem'
+      tableName: 'poems'
     }
   )
   return NewPoem
