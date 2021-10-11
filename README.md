@@ -30,5 +30,5 @@ I have mapped out the backend models and their associations with an ERD, as well
 
 ---
 
-![Image](https://i.imgur.com/2KMw0QB.png)
+![Image](https://i.imgur.com/x5bAnW6.png)
 ![Image](https://i.imgur.com/0oz9opk.png)
