@@ -1,0 +1,24 @@
+{
+  "name": "makeitpoetry",
+  "version": "1.0.0",
+  "description": "### Date: 10/10/21",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hayden707/MakeItPoetry.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hayden707/MakeItPoetry/issues"
+  },
+  "homepage": "https://github.com/hayden707/MakeItPoetry#readme",
+  "dependencies": {
+    "pg": "^8.7.1",
+    "sequelize": "^6.7.0"
+  }
+}
