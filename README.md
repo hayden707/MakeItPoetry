@@ -12,7 +12,7 @@
 
 ---
 
-[Trello](LINK)
+[Trello](https://trello.com/b/LK8xHcMa/makeitpoetry)
 
 ---
 
