@@ -9,11 +9,18 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      NewPoem.belongsTo(model.User, {
+        foreignKey: 'user_id',
+        as: 'user'
+      }),
+        NewPoem.belongsTo(model.SourceText, {
+          foreignKey: 'source_text_id',
+          as: 'source_text'
+        })
     }
   }
   NewPoem.init(
     {
-      poemId: DataTypes.INTEGER,
       sourceId: DataTypes.INTEGER,
       userId: DataTypes.INTEGER,
       content: DataTypes.STRING

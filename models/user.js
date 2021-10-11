@@ -9,11 +9,18 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      User.hasMany(model.SourceText, {
+        foreignKey: 'user_id',
+        as: 'user'
+      }),
+        User.hasMany(model.NewPoem, {
+          foreignKey: 'user_id',
+          as: 'user'
+        })
     }
   }
   User.init(
     {
-      userId: DataTypes.INTEGER,
       name: DataTypes.STRING
     },
     {
