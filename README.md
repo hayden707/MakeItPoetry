@@ -27,3 +27,8 @@ I will be styling with CSS.
 **_Approach_**
 
 I have mapped out the backend models and their associations with an ERD, as well as the front-end with a CHD. I created a plan for my project week using a Trello board (linked above)
+
+---
+
+![Image](https://i.imgur.com/2KMw0QB.png)
+![Image](https://i.imgur.com/aA2g0d6.png)
