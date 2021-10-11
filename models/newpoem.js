@@ -9,13 +9,11 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      NewPoem.belongsTo(model.User, {
-        foreignKey: 'user_id',
-        as: 'user'
+      NewPoem.belongsTo(models.User, {
+        foreignKey: 'user_id'
       }),
-        NewPoem.belongsTo(model.SourceText, {
-          foreignKey: 'source_id',
-          as: 'source'
+        NewPoem.belongsTo(models.SourceText, {
+          foreignKey: 'source_id'
         })
     }
   }
