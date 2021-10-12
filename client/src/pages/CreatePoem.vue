@@ -12,9 +12,8 @@
       msg: String
       },
     methods: {
-      login() {
-      this.$auth.loginWithRedirect();
+      
     }
     }
-  }
+  
 </script>

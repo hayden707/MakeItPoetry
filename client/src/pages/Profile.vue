@@ -1,12 +1,12 @@
 <template>
-  <div class="feed">
-  <h3>This is the feed</h3>
+  <div class="profile">
+  <h3>User Profile Page</h3>
   </div>
 </template>
 
 <script>
   export default {
-    name: 'feed',
+    name: 'profile',
     components: {},
     props: {
       msg: String
