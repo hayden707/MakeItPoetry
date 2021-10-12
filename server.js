@@ -5,6 +5,7 @@ const bodyParser = require('body-parser')
 // const path = require('path')
 const { ppid } = require('process')
 const UserRouter = require('./routes/UserRouter')
+const TextRouter = require('./routes/TextRouter')
 
 const PORT = process.env.PORT || 3000
 
@@ -16,6 +17,7 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 
 app.use('/api/users', UserRouter)
+app.use('/api/texts', TextRouter)
 
 app.listen(PORT, () => {
   console.log(`Express server listening on port ${PORT}`)
