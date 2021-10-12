@@ -2,22 +2,29 @@
   <div class="create-poem">
     <div class="flex>">
     <h3>Create Poem Page</h3>
-    <form>
-      <input type="text" value="Name of Text" />
-      <textarea>Paste Text Here</textarea>
-      <button>Create A Poem</button>
+    <form @submit.prevent="submitText" class="text-form">
+      <input type="text" value="Name of Text"/>
+      <textarea @input.prevent="handleContent">Paste Text Here</textarea>
+      <button type="submit">Create A Poem</button>
     </form>
   </div>
   </div>
 </template>
 
 <script>
+  // import { CreateText } from '../services/texts'
   export default {
     name: 'create-poem',
+    data: ()=>({
+      textContent: ''
+    }),
     components: {},
     props: {},
     methods: {
-      
+     
+      handleContent(e) {
+        this.textContent = e.target.value
+      }
     }
     }
   
