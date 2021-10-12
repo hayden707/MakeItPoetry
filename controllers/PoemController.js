@@ -9,4 +9,13 @@ const CreatePoem = async (req, res) => {
   }
 }
 
-module.exports = { CreatePoem }
+const GetPoems = async (req, res) => {
+  try {
+    const poems = await NewPoem.findAll()
+    res.send(poems)
+  } catch (error) {
+    return res.status(500).send(error.message)
+  }
+}
+
+module.exports = { CreatePoem, GetPoems }
