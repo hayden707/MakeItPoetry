@@ -9,8 +9,8 @@
     </form>
     <div v-if="poemCreated" class="display-poem">
       <pre>{{ this.textContent }}</pre>
-      <button>Save Poem</button>
-      <button>Create a New Poem</button>
+      <button type="submit" @click="submitPoem">Save Poem</button>
+      <button type="submit" @click="this.poemCreated = false">Create a New Poem</button>
     </div>
   </div>
   </div>
@@ -18,6 +18,7 @@
 
 <script>
   import { CreateText } from '../services/texts'
+  import { CreatePoem } from '../services/poems'
   export default {
     name: 'create-poem',
     data: ()=>({
@@ -28,7 +29,8 @@
       showArea: true
     }),
     props: {
-      newText: Array
+      newText: Array,
+      poems: Array
     },
     components: {},
     methods: {
@@ -52,6 +54,7 @@
         newArr.splice(20, 0, "\n")
 
         this.textContent = newArr.join(' ')
+        this.newPoem = this.textContent
 
         this.poemCreated = true
         this.showArea = false
@@ -59,7 +62,18 @@
        },
       handleContent(e) {
         this.textContent = e.target.value
+      },
+      async submitPoem(){
+        const poem = await CreatePoem({
+         content: this.newPoem
+       })
+       this.poems.unshift(poem)
+      },
+      newPoem(){
+      this.poemCreated = false,
+      this.showArea = true
       }
+      
      }
     }
     
