@@ -7,7 +7,7 @@
       <textarea type="text" @input.prevent="handleContent" :value="textContent">Paste Text Here</textarea>
       <button type="submit">Create A Poem</button>
     </form>
-    <p>{{ this.textContent }}</p>
+    <pre>{{ this.textContent }}</pre>
   </div>
   </div>
 </template>
@@ -31,7 +31,22 @@
          content: this.textContent
        })
        this.texts.unshift(text)
-      
+
+       this.textContent = this.textContent.split(' ');
+
+        let newArr = []
+
+        while (newArr.length < 20){
+          newArr.push(this.textContent[Math.floor(Math.random()*this.textContent.length)])
+        }
+
+        newArr.splice(5, 0, "\n")
+        newArr.splice(10, 0, "\n")
+        newArr.splice(15, 0, "\n")
+        newArr.splice(20, 0, "\n")
+
+        this.textContent = newArr.join(' ')
+              
        },
       handleContent(e) {
         this.textContent = e.target.value
