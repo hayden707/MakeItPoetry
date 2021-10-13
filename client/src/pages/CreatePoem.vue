@@ -2,13 +2,15 @@
   <div class="create-poem">
     <div class="flex>">
     <h3>Create Poem Page</h3>
-    <form @submit.prevent="submitText" class="text-form">
+    <form @submit.prevent="submitText" class="text-form" v-if="showArea">
       <!-- <input type="text" value="Name of Text"/> -->
       <textarea type="text" @input.prevent="handleContent" :value="textContent">Paste Text Here</textarea>
       <button type="submit">Create A Poem</button>
     </form>
     <div v-if="poemCreated" class="display-poem">
       <pre>{{ this.textContent }}</pre>
+      <button>Save Poem</button>
+      <button>Create a New Poem</button>
     </div>
   </div>
   </div>
@@ -22,7 +24,8 @@
       texts: [],
       textContent: '',
       newPoem: '',
-      poemCreated: false
+      poemCreated: false,
+      showArea: true
     }),
     props: {
       newText: Array
@@ -51,6 +54,7 @@
         this.textContent = newArr.join(' ')
 
         this.poemCreated = true
+        this.showArea = false
               
        },
       handleContent(e) {
