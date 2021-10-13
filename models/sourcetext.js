@@ -19,7 +19,7 @@ module.exports = (sequelize, DataTypes) => {
   }
   SourceText.init(
     {
-      content: DataTypes.STRING,
+      content: DataTypes.TEXT,
       user_id: {
         type: DataTypes.INTEGER,
         onDelete: 'CASCADE',
