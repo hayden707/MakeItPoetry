@@ -1,7 +1,9 @@
 <template>
   <div class="feed">
+    <div class="poem-list">
     <PoemCard 
     v-for="poem in poemList" :key="poem.id" :poem="poem.content" :poemList="poemList"/>
+  </div>
   </div>
 </template>
 
@@ -25,3 +27,9 @@
     }
   }
 </script>
+
+<style  scoped>
+  .poem-list {
+    margin-top: 60px
+  }
+</style>

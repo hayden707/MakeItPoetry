@@ -10,7 +10,7 @@
     <div v-if="poemCreated" class="display-poem">
       <pre>{{ this.textContent }}</pre>
       <button type="submit" @click="submitPoem">Save Poem</button>
-      <button type="submit" @click="this.poemCreated = false">Create a New Poem</button>
+      <button type="submit" @click="newPoem">Create a New Poem</button>
     </div>
   </div>
   </div>
@@ -38,7 +38,7 @@
        const text = await CreateText({
          content: this.textContent
        })
-       this.texts.unshift(text)
+       this.texts.push(text)
 
        this.textContent = this.textContent.split(' ');
 
@@ -67,7 +67,7 @@
         const poem = await CreatePoem({
          content: this.newPoem
        })
-       this.poems.unshift(poem)
+       this.poems.push(poem)
       },
       newPoem(){
       this.poemCreated = false,
