@@ -7,7 +7,9 @@
       <textarea type="text" @input.prevent="handleContent" :value="textContent">Paste Text Here</textarea>
       <button type="submit">Create A Poem</button>
     </form>
-    <pre>{{ this.textContent }}</pre>
+    <div v-if="poemCreated" class="display-poem">
+      <pre>{{ this.textContent }}</pre>
+    </div>
   </div>
   </div>
 </template>
@@ -19,7 +21,8 @@
     data: ()=>({
       texts: [],
       textContent: '',
-      newPoem: ''
+      newPoem: '',
+      poemCreated: false
     }),
     props: {
       newText: Array
@@ -46,6 +49,8 @@
         newArr.splice(20, 0, "\n")
 
         this.textContent = newArr.join(' ')
+
+        this.poemCreated = true
               
        },
       handleContent(e) {
