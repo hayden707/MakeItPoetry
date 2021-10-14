@@ -37,7 +37,8 @@
     methods: {
      async submitText(){
        const text = await CreateText({
-         content: this.textContent
+         content: this.textContent,
+         auth_id: this.userId
        })
        this.texts.unshift(text)
 
@@ -59,7 +60,7 @@
 
         this.poemCreated = true
         this.showArea = false
-        this.userId = this.$auth.user.id
+        this.userId = this.$auth.user.sub
               
        },
       handleContent(e) {
