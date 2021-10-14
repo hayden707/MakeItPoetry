@@ -1,6 +1,6 @@
 import Client from './api'
 
-export const CreatePoem = async data => {
-  const res = await Client.post('/poems', data)
+export const CreateUser = async data => {
+  const res = await Client.post('/users', data)
   return res.data
 }

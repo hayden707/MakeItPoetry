@@ -14,13 +14,12 @@ module.exports = {
       content: {
         type: Sequelize.TEXT
       },
-      user_id: {
+      user_auth: {
         type: Sequelize.STRING,
         onDelete: 'CASCADE',
-        unique: true,
         references: {
           model: 'users',
-          key: 'auth_id'
+          key: 'auth'
         }
       },
       source_id: {

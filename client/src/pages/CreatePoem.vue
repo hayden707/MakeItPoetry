@@ -19,6 +19,7 @@
 <script>
   import { CreateText } from '../services/texts'
   import { CreatePoem } from '../services/poems'
+  // import { CreateUser } from '../services/users'
   export default {
     name: 'create-poem',
     data: ()=>({
@@ -31,14 +32,14 @@
     }),
     props: {
       newText: Array,
-      poems: Array
+      poems: Array,
+      users: Array
     },
     components: {},
     methods: {
      async submitText(){
        const text = await CreateText({
          content: this.textContent,
-         auth_id: this.userId
        })
        this.texts.unshift(text)
 
@@ -71,6 +72,11 @@
          content: this.newPoem
        })
        this.poems.unshift(poem)
+      //  const user= await CreateUser({
+      //    name: this.userId,
+      //    auth_id: this.userId
+      //  })
+      //  this.users.unshift(user)
       },
       newPoem(){
       this.poemCreated = false,

@@ -11,8 +11,9 @@ module.exports = {
       name: {
         type: Sequelize.STRING
       },
-      auth_id: {
+      auth: {
         type: Sequelize.STRING,
+        // allowNull: false,
         unique: true
       },
       createdAt: {

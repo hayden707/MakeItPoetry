@@ -10,18 +10,19 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
       User.hasMany(models.SourceText, {
-        foreignKey: 'auth_id'
+        foreignKey: 'user_auth'
       }),
         User.hasMany(models.NewPoem, {
-          foreignKey: 'auth_id'
+          foreignKey: 'user_auth'
         })
     }
   }
   User.init(
     {
       name: DataTypes.STRING,
-      auth_id: {
+      auth: {
         type: DataTypes.STRING,
+        // allowNull: false,
         unique: true
       }
     },
