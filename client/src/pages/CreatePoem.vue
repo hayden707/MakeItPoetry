@@ -26,7 +26,8 @@
       textContent: '',
       newPoem: '',
       poemCreated: false,
-      showArea: true
+      showArea: true,
+      userId: ''
     }),
     props: {
       newText: Array,
@@ -38,7 +39,7 @@
        const text = await CreateText({
          content: this.textContent
        })
-       this.texts.push(text)
+       this.texts.unshift(text)
 
        this.textContent = this.textContent.split(' ');
 
@@ -58,6 +59,7 @@
 
         this.poemCreated = true
         this.showArea = false
+        this.userId = this.$auth.user.id
               
        },
       handleContent(e) {
@@ -67,7 +69,7 @@
         const poem = await CreatePoem({
          content: this.newPoem
        })
-       this.poems.push(poem)
+       this.poems.unshift(poem)
       },
       newPoem(){
       this.poemCreated = false,

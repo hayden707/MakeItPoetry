@@ -10,7 +10,7 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
       SourceText.belongsTo(models.User, {
-        foreignKey: 'user_id'
+        foreignKey: 'auth_id'
       }),
         SourceText.hasMany(models.NewPoem, {
           foreignKey: 'source_id'
@@ -19,13 +19,15 @@ module.exports = (sequelize, DataTypes) => {
   }
   SourceText.init(
     {
+      title: DataTypes.STRING,
       content: DataTypes.TEXT,
       user_id: {
         type: DataTypes.INTEGER,
         onDelete: 'CASCADE',
+        unique: true,
         references: {
           model: 'users',
-          key: 'id'
+          key: 'auth_id'
         }
       }
     },

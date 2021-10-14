@@ -3,7 +3,9 @@
     <div id="nav">
       <Nav />
     </div>
+    <main>
       <router-view />
+    </main>
   </div>
 </template>
 
@@ -23,5 +25,11 @@ export default {
   /* text-align: center; */
   color: #2c3e50;
   margin-top: 60px;
+}
+
+@font-face {
+  font-family: "kaerukaeru-Regular";
+  src: local("kaerukaeru-Regular"),
+  url(./fonts/kaerukaeru-Regular.woff)
 }
 </style>
