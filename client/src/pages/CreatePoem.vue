@@ -9,7 +9,7 @@
     </form>
     <div v-if="poemCreated" class="display-poem">
       <pre>{{ this.textContent }}</pre>
-      <button type="submit" @click="submitPoem">Save Poem</button>
+      <button type="submit" @click="submitPoem" >Save Poem</button>
       <button type="submit" @click="newPoem">Create a New Poem</button>
     </div>
   </div>
@@ -19,7 +19,7 @@
 <script>
   import { CreateText } from '../services/texts'
   import { CreatePoem } from '../services/poems'
-  // import { CreateUser } from '../services/users'
+  import { CreateUser } from '../services/users'
   export default {
     name: 'create-poem',
     data: ()=>({
@@ -28,7 +28,7 @@
       newPoem: '',
       poemCreated: false,
       showArea: true,
-      userId: ''
+      auth: ''
     }),
     props: {
       newText: Array,
@@ -61,23 +61,25 @@
 
         this.poemCreated = true
         this.showArea = false
-        this.userId = this.$auth.user.sub
+        this.auth = this.$auth.user.sub
               
        },
       handleContent(e) {
         this.textContent = e.target.value
       },
       async submitPoem(){
+
         const poem = await CreatePoem({
-         content: this.newPoem
+         content: this.newPoem,
+         user_auth: this.auth
        })
-       this.poems.unshift(poem)
-      //  const user= await CreateUser({
-      //    name: this.userId,
-      //    auth_id: this.userId
-      //  })
-      //  this.users.unshift(user)
-      },
+        const user= await CreateUser({
+         name: this.auth,
+         auth: this.auth
+       })
+       return poem, user
+      }
+      ,
       newPoem(){
       this.poemCreated = false,
       this.showArea = true

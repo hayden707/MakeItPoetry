@@ -19,7 +19,7 @@ module.exports = (sequelize, DataTypes) => {
   }
   NewPoem.init(
     {
-      tite: DataTypes.STRING,
+      title: DataTypes.STRING,
       content: DataTypes.TEXT,
       user_auth: {
         type: DataTypes.STRING,

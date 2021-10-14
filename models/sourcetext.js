@@ -10,7 +10,7 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
       SourceText.belongsTo(models.User, {
-        foreignKey: 'auth'
+        foreignKey: 'user_auth'
       }),
         SourceText.hasMany(models.NewPoem, {
           foreignKey: 'source_id'
