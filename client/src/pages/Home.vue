@@ -15,9 +15,7 @@
   export default {
     name: 'home',
     components: {},
-    props: {
-      msg: String
-      },
+    props: {},
     methods: {
     //   login() {
     //   this.$auth.loginWithRedirect();

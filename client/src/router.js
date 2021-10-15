@@ -6,6 +6,7 @@ import Feed from './pages/Feed.vue'
 import Profile from './pages/Profile.vue'
 import Signup from './pages/Signup.vue'
 import Signout from './pages/Signout.vue'
+import Signin from './pages/Signin.vue'
 
 const routes = [
   { path: '/', component: Home, name: 'Home' },
@@ -18,7 +19,8 @@ const routes = [
     name: 'Profile'
   },
   { path: '/signup', component: Signup, name: 'Signup' },
-  { path: '/signout', component: Signout, name: 'Signout' }
+  { path: '/signout', component: Signout, name: 'Signout' },
+  { path: '/signin', component: Signin, name: 'Signin' }
 ]
 
 export default new VueRouter({ routes, mode: 'history' })

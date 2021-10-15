@@ -72,7 +72,12 @@ export default{
         name: this.name,
         email: this.email,
         password: this.password
-      }); return newUser
+      }); 
+      this.name = '',
+      this.email = '',
+      this.password = ''
+      this.$router.push('/signin')
+      return newUser
     } 
     
   }
