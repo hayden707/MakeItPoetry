@@ -29,6 +29,7 @@
         <router-link to="/feed" class="navbar-item">Poems</router-link>
         <router-link to="/about" class="navbar-item">About</router-link>
         <router-link to="/profile" class="navbar-item">Profile</router-link>
+        <router-link to="signin" class="navbar-item">Sign In</router-link>
         <router-link to="/signup" class="navbar-item">Sign Up</router-link>
         <router-link to="/signout" class="navbar-item">Sign Out</router-link>
       </div>

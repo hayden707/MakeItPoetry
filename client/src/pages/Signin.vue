@@ -17,7 +17,7 @@
       </div>
 
       <div>
-        <button type="submit">
+        <button type="submit" @click="testState">
           Signin
         </button>
       </div>
@@ -31,7 +31,8 @@ export default {
   name: 'signin',
   data: ()=>({
     email: '',
-    password: ''
+    password: '',
+    currentUser: String
   }),
   methods: {
     handleEmail(e) {
@@ -40,6 +41,13 @@ export default {
     handlePassword(e) {
       this.password=e.target.value
     },
+    testState(){
+      this.$user.cart.currentUser = "Bob"
+      console.log(this.$user.cart.currentUser)
+    }
+
+
+
     // async signin(){
     //   const payload = await SignInuser(this.email, this.password)
 

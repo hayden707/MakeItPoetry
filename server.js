@@ -8,6 +8,7 @@ const UserRouter = require('./routes/UserRouter')
 const TextRouter = require('./routes/TextRouter')
 const PoemRouter = require('./routes/PoemRouter')
 const AuthRouter = require('./routes/AuthRouter')
+const path = require('path')
 // const PostRouter = require('./routes/PostRouter')
 
 const PORT = process.env.PORT || 3000
