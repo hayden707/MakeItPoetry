@@ -10,9 +10,7 @@
   "dependencies": {
     "@auth0/auth0-spa-js": "^1.18.0",
     "core-js": "^3.6.5",
-    "vue": "^2.6.11"
-  },
-  "devDependencies": {
+    "vue": "^2.6.11",
     "@vue/cli-plugin-babel": "~4.5.0",
     "@vue/cli-plugin-eslint": "~4.5.0",
     "@vue/cli-service": "~4.5.0",
@@ -21,6 +19,7 @@
     "eslint-plugin-vue": "^6.2.2",
     "vue-template-compiler": "^2.6.11"
   },
+  "devDependencies": {},
   "eslintConfig": {
     "root": true,
     "env": {
