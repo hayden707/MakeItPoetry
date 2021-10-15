@@ -4,7 +4,7 @@ import About from './pages/About.vue'
 import CreatePoem from './pages/CreatePoem.vue'
 import Feed from './pages/Feed.vue'
 import Profile from './pages/Profile.vue'
-import Signin from './pages/Signin.vue'
+import Signup from './pages/Signup.vue'
 import Signout from './pages/Signout.vue'
 
 const routes = [
@@ -17,7 +17,7 @@ const routes = [
     component: Profile,
     name: 'Profile'
   },
-  { path: '/signin', component: Signin, name: 'Signin' },
+  { path: '/signup', component: Signup, name: 'Signup' },
   { path: '/signout', component: Signout, name: 'Signout' }
 ]
 
