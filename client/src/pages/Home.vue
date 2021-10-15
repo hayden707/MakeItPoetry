@@ -3,9 +3,9 @@
     <div class="home-flex">
       <h1 class="home-head">make it poetry</h1>
       <div class="button-block">
-      <p v-if="!$auth.isAuthenticated">sign up to save your poems</p>
-      <a type="button" v-if="!$auth.isAuthenticated" @click="login" class="button is-xl is-dark " >Sign Up</a>
-      <p v-if="$auth.isAuthenticated" class="is-size-3 has-background-dark welcome">Welcome, {{ $auth.user.name }}!</p>
+      <p>sign up to save your poems</p>
+      <a type="button" @click="login">Sign Up</a>
+      <p>Welcome</p>
       </div>
     </div>
   </div>
@@ -19,9 +19,9 @@
       msg: String
       },
     methods: {
-      login() {
-      this.$auth.loginWithRedirect();
-    }
+    //   login() {
+    //   this.$auth.loginWithRedirect();
+    // }
     }
   }
 </script>

@@ -28,23 +28,15 @@
         <router-link to="/createpoem" class="navbar-item">Create A Poem</router-link>
         <router-link to="/feed" class="navbar-item">Poems</router-link>
         <router-link to="/about" class="navbar-item">About</router-link>
-        <router-link v-if="$auth.isAuthenticated" to="/profile" class="navbar-item">Profile</router-link>
+        <router-link to="/profile" class="navbar-item">Profile</router-link>
+        <router-link to="/signin" class="navbar-item">Sign In</router-link>
       </div>
       <div class="navbar-end">
       <div class="navbar-item">
         <div class="buttons">
-      <!-- Check that the SDK client is not currently loading before accessing is methods -->
-          <div v-if="!$auth.loading">
-        <!-- show login when not authenticated -->
-            <a v-if="!$auth.isAuthenticated" @click="login" class="button is-dark">
-              <strong>Sign in</strong>
-            </a>
-        <!-- show logout when authenticated -->
-        <a v-if="$auth.isAuthenticated" @click="logout" class="button is-dark"><strong>Log out</strong>
-        </a>
+      
       </div>
       </div>
-    </div>
     </div>
     </div>
     </div>
@@ -59,15 +51,15 @@ export default {
   name: 'Nav',
   methods: {
     // Log the user in
-    login() {
-      this.$auth.loginWithRedirect();
-    },
+    // login() {
+    //   this.$auth.loginWithRedirect();
+    // },
     // Log the user out
-    logout() {
-      this.$auth.logout({
-        returnTo: window.location.origin
-      });
-    }
+    // logout() {
+    //   this.$auth.logout({
+    //     returnTo: window.location.origin
+    //   });
+    // }
   }
 }
 </script>

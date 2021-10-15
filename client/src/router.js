@@ -4,7 +4,7 @@ import About from './pages/About.vue'
 import CreatePoem from './pages/CreatePoem.vue'
 import Feed from './pages/Feed.vue'
 import Profile from './pages/Profile.vue'
-import { authGuard } from './auth/authGuard'
+import Signin from './pages/Signin.vue'
 
 const routes = [
   { path: '/', component: Home, name: 'Home' },
@@ -14,9 +14,9 @@ const routes = [
   {
     path: '/profile',
     component: Profile,
-    name: 'Profile',
-    beforeEnter: authGuard
-  }
+    name: 'Profile'
+  },
+  { path: '/signin', component: Signin, name: 'Signin' }
 ]
 
 export default new VueRouter({ routes, mode: 'history' })
