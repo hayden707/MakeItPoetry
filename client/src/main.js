@@ -5,6 +5,17 @@ import router from './router'
 
 Vue.config.productionTip = false
 
+const user = Vue.observable({
+  cart: {
+    currentUsers: 'Hayden',
+    add(currentUser) {
+      user.cart.currentUsers.push(currentUser)
+    }
+  }
+})
+
+Vue.prototype.$user = user
+
 Vue.use(VueRouter)
 
 new Vue({

@@ -1,5 +1,5 @@
 <template>
-  <div class="signin">
+  <div class="signin" >
   <form @submit.prevent="signin">
       <div>
         <label for="email">
@@ -39,7 +39,23 @@ export default {
     },
     handlePassword(e) {
       this.password=e.target.value
-    }
+    },
+    // async signin(){
+    //   const payload = await SignInuser(this.email, this.password)
+
+
+
+      // const newUser = await RegisterUser({
+      //   name: this.name,
+      //   email: this.email,
+      //   password: this.password
+      // }); 
+      // this.name = '',
+      // this.email = '',
+      // this.password = ''
+      // this.$router.push('/signin')
+      // return newUser
+    // } 
   }
 }
 </script>

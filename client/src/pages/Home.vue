@@ -5,7 +5,8 @@
       <div class="button-block">
       <p>sign up to save your poems</p>
       <a type="button" @click="login">Sign Up</a>
-      <p>Welcome</p>
+      <p>Welcome {{ $user.cart.currentUsers }}</p>
+
       </div>
     </div>
   </div>

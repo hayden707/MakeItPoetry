@@ -13,7 +13,12 @@
 import Nav from './components/Nav.vue'
 export default {
   name: 'App',
-  components: { Nav }
+  components: { Nav },
+  data: ()=>({
+    user: null,
+    authenticated: false
+
+  })
 }
 </script>
 
