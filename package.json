@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
-    "dev": "nodemon server.js"
+    "dev": "nodemon server.js",
+    "build": "npm install && npx sequelize-cli db:migrate && cd client && rm -rf build && npm install && npm run build"
   },
   "repository": {
     "type": "git",
@@ -34,6 +35,5 @@
     "pg": "^8.7.1",
     "sequelize": "^6.7.0",
     "vue-router": "^3.5.2"
-  },
-  "build": "npm install && npx sequelize-cli db:migrate && cd client && rm -rf build && npm install && npm run build"
+  }
 }
