@@ -1,7 +1,7 @@
 <template>
   <div class="signout-page">
     <h3>:) signup page (:</h3>
-    <form @handleSubmit.prevent="submit">
+    <form @submit.prevent="register">
 
       <div>
         <label for="name">
@@ -43,6 +43,7 @@
 </template>
 
 <script>
+import { RegisterUser } from '../services/auth.js'
 
 export default{
   name: 'signup',
@@ -65,8 +66,15 @@ export default{
     },
     hanldeConfirmPassword(e){
       this.confirmPassword = e.target.value
-
-    }
+    },
+    async register(){
+      const newUser = await RegisterUser({
+        name: this.name,
+        email: this.email,
+        password: this.password
+      }); return newUser
+    } 
+    
   }
 }
 
