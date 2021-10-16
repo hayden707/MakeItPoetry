@@ -12,5 +12,6 @@ router.get(
 )
 router.put('/:poem_id', controller.UpdatePoem)
 router.delete('/:poem_id', controller.DeletePoem)
+router.get('/:poem_id', controller.GetPoemById)
 
 module.exports = router

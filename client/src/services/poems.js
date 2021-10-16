@@ -9,3 +9,8 @@ export const GetPoems = async () => {
   const res = await Client.get('/poems')
   return res.data
 }
+
+export const EditPoem = async (id, data) => {
+  const res = await Client.put(`/poems/${id}`, data)
+  return res
+}

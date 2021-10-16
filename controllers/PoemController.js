@@ -52,10 +52,21 @@ const DeletePoem = async (req, res) => {
   }
 }
 
+const GetPoemById = async (req, res) => {
+  try {
+    const id = req.params.poem_id
+    const poem = await Poem.findByPk(id)
+    res.send(poem)
+  } catch (error) {
+    res.status(500).send({ error: error })
+  }
+}
+
 module.exports = {
   CreatePoem,
   GetPoems,
   GetPoemsByUser,
   UpdatePoem,
-  DeletePoem
+  DeletePoem,
+  GetPoemById
 }
