@@ -1,6 +1,6 @@
 const router = require('express').Router()
 const controller = require('../controllers/PoemController')
-const middleware = require('../middleware')
+// const middleware = require('../middleware')
 
 router.post('/', controller.CreatePoem)
 router.get('/', controller.GetPoems)
