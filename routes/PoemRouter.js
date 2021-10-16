@@ -6,8 +6,8 @@ router.post('/', controller.CreatePoem)
 router.get('/', controller.GetPoems)
 router.get(
   '/user/:user_id',
-  middleware.stripToken,
-  middleware.verifyToken,
+  // middleware.stripToken,
+  // middleware.verifyToken,
   controller.GetPoemsByUser
 )
 router.put('/:poem_id', controller.UpdatePoem)
