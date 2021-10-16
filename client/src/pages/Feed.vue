@@ -2,7 +2,7 @@
   <div class="feed">
     <div class="poem-list">
     <PoemCard 
-    v-for="poem in poemList" :key="poem.id" :poem="poem.content" :poemList="poemList"/>
+    v-for="poem in poemList" :key="poem.id" :poem="poem.content" :title="poem.title" :poemList="poemList"/>
   </div>
   </div>
 </template>

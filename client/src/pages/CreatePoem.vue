@@ -4,13 +4,19 @@
     <h3>Create Poem Page</h3>
     <form @submit.prevent="submitText" class="text-form" v-if="showArea">
       <!-- <input type="text" value="Name of Text"/> -->
-      <textarea type="text" @input.prevent="handleContent" :value="textContent">Paste Text Here</textarea>
+      <input type="text" placeholder="source of text (optional)" @input.prevent="handleTitle" :value="title"/>
+      <textarea type="text" @input.prevent="handleContent" :value="textContent" placeholder="past a paragraph of source text here. remove indentions and excess spacing ">Paste Text Here</textarea>
       <button type="submit">Create A Poem</button>
     </form>
     <div v-if="poemCreated" class="display-poem">
       <pre>{{ this.textContent }}</pre>
       <button type="submit" @click="submitPoem" >Save Poem</button>
+      <button type="submit" @click="editPoem">Edit Poem</button>
       <button type="submit" @click="newPoem">Create a New Poem</button>
+    </div>
+    <div class="edit-poem" v-if="editing">
+      <textarea type="text" :value="newPoem" />
+      <button type="submit">Edit</button>
     </div>
   </div>
   </div>
@@ -19,7 +25,7 @@
 <script>
   import { CreateText } from '../services/texts'
   import { CreatePoem } from '../services/poems'
-  import { CreateUser } from '../services/users'
+  // import { CreateUser } from '../services/users'
   export default {
     name: 'create-poem',
     data: ()=>({
@@ -28,7 +34,9 @@
       newPoem: '',
       poemCreated: false,
       showArea: true,
-      auth: ''
+      title: '',
+      editing: false
+      // auth: ''
     }),
     props: {
       newText: Array,
@@ -61,28 +69,36 @@
 
         this.poemCreated = true
         this.showArea = false
-        this.auth = this.$auth.user.sub
+        // this.auth = this.$auth.user.sub
               
        },
       handleContent(e) {
         this.textContent = e.target.value
+      },handleTitle(e) {
+        this.title = e.target.value
       },
       async submitPoem(){
 
         const poem = await CreatePoem({
+          title: this.title,
          content: this.newPoem,
-         user_auth: this.auth
+        //  user_auth: this.auth
        })
-        const user= await CreateUser({
-         name: this.auth,
-         auth: this.auth
-       })
-       return poem, user
+      //   const user= await CreateUser({
+      //    name: this.auth,
+      //    auth: this.auth
+      //  })
+       return poem
       }
       ,
       newPoem(){
       this.poemCreated = false,
       this.showArea = true
+      },
+      editPoem(){
+      this.showArea = false
+      this.poemCreated = false
+      this.editing=true
       }
       
      }

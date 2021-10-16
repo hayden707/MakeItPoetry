@@ -1,7 +1,10 @@
 <template>
 <div>
   <div class="poem-card">
-    <pre>{{ poem }}</pre>
+    <div class="poem-box">
+      <pre class="title">{{ title }}</pre>
+      <pre>{{ poem }}</pre>
+    </div>
   </div>
   <div class="flex">
   <p class="squiggles">~~~~~~~~~~</p>
@@ -14,6 +17,7 @@
 export default {
   name: "PoemCard",
   props:{
+    title: String,
     poem: Object,
     poemList: Array
 }}
@@ -28,6 +32,10 @@ export default {
   .poem-card {
     display: flex;
     justify-content: center;
+  }
+
+  .title {
+    font-weight: bold;
   }
 
   
