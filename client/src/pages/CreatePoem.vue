@@ -69,7 +69,6 @@
 
         this.poemCreated = true
         this.showArea = false
-        // this.auth = this.$auth.user.sub
       
         const poem = await CreatePoem({
           title: this.title,
