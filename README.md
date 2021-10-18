@@ -24,7 +24,7 @@
 
 **Make It Poetry** is a generative poetry app built with Vue.js and PostgreSQL. The site allows users to input any source text and ouputs a randomly generated "poem." The user is able to update the poem before it is posted on a general feed of all poems that have been created through the app.  
 
-Currently, the generative poetry algorithm is a simple javascript function that scrambles the words in the text and randomly selects a set number to output into a single poetic form. I plan to continue to tweak the algorithm to make the forms more random and the language (slightly) less non-sensical.
+Currently, the generative poetry algorithm is a simple JavaScript function that scrambles the words of a text and randomly selects a set number to output into a single poetic form. I plan to tweak the algorithm to make the forms more random and the language (slightly) less non-sensical.
 
 ---
 
