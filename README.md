@@ -16,7 +16,7 @@
 
 ---
 
-![Deployed Link] (https://makeitpoetry.herokuapp.com)
+[Deployed Link](https://makeitpoetry.herokuapp.com)
 
 ---
 
