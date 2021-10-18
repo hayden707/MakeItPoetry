@@ -45,25 +45,6 @@ export default {
       this.$user.cart.currentUser = "Bob"
       console.log(this.$user.cart.currentUser)
     }
-
-
-
-    // async signin(){
-    //   const payload = await SignInuser(this.email, this.password)
-
-
-
-      // const newUser = await RegisterUser({
-      //   name: this.name,
-      //   email: this.email,
-      //   password: this.password
-      // }); 
-      // this.name = '',
-      // this.email = '',
-      // this.password = ''
-      // this.$router.push('/signin')
-      // return newUser
-    // } 
   }
 }
 </script>

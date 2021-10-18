@@ -10,7 +10,6 @@
     name: 'profile',
     components: {},
     props: {
-      msg: String
       },
     methods: {
      

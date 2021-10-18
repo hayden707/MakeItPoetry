@@ -2,7 +2,7 @@
   <div class="feed">
     <div class="poem-list">
     <PoemCard 
-    v-for="poem in poemList" :key="poem.id" :poem="poem.content" :title="poem.title" :poemList="poemList"/>
+    v-for="poem in poemList" :key="poem.id" :poem="poem.content" :title="poem.title" :poemList="poemList" :id="poem.id"/>
   </div>
   </div>
 </template>
@@ -13,8 +13,10 @@
   export default {
     name: 'feed',
     components: {PoemCard},
+    data: ()=>({}),
     props: {
-      poemList: []
+      poemList: [],
+      users: []
       },
     mounted(){
       this.fetchPoems()
