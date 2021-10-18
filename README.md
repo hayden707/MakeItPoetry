@@ -30,7 +30,7 @@ Currently, the generative poetry algorithm is a simple JavaScript function that 
 
 **_Technologies Used_**
 
-Vue.js, Node.js, Express, PostgreSQL, JavaScript, HTML, CSS.
+Vue.js, Node.js, Express, Sequelize, PostgreSQL, JavaScript, HTML, CSS.
 
 ---
 
