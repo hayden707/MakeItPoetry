@@ -15,9 +15,8 @@
 ![Image](https://i.imgur.com/DCxstDq.png)
 
 ---
-[Deployed Link] (https://makeitpoetry.herokuapp.com)
 
-[Trello](https://trello.com/b/LK8xHcMa/makeitpoetry)
+![Deployed Link] (https://makeitpoetry.herokuapp.com)
 
 ---
 
