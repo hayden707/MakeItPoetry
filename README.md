@@ -22,9 +22,7 @@
 
 **_Description_**
 
-For my P4 I will be building a full stack poetry application using Vue, Express, and PostgreSQL. A user will be able to paste a text into an input field, which will randomize the language and reformat a portion of the source material into a few short lines of text to create a "poem." I will impletment Auth0 authentication so that Users will be able to save their favorite poems as a list, edit their generative poems, and delete the poems they don't like.
-
-I will be styling with CSS. 
+**Make It Poetry** is a generative poetry app built with Vue.js and PostgreSQL. The site allows users to input any source text and it ouputs a randomly generated "poem." The user is able to update the poem before it is posted on a general feed of all poems that have been created through the app.  
 
 ---
 
