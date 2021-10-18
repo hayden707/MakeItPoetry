@@ -3,7 +3,6 @@
     <div class="flex>">
     <h3>create a poem:</h3>
     <form @submit.prevent="submitText" class="text-form" v-if="showArea">
-      <!-- <input type="text" value="Name of Text"/> -->
       <input type="text" placeholder="source of text (optional)" @input.prevent="handleTitle" :value="title"/>
       <textarea type="text" @input.prevent="handleContent" :value="textContent" placeholder="paste a paragraph of source text here. remove indentions and excess spacing">Paste Text Here</textarea>
       <input type="text" placeholder="your name (optional)" :value="username" class ="user-input" @input.prevent="handleUser"/>
@@ -11,7 +10,6 @@
     </form>
     <div v-if="poemCreated" class="display-poem">
       <pre>{{ this.textContent }}</pre>
-      <!-- <button type="submit" @click="submitPoem" >Save Poem</button> -->
       <button type="submit" @click="editPoem">edit poem</button>
       <button type="submit" @click="startOver">create a poem</button>
     </div>
